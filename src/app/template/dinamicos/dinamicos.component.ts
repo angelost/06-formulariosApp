@@ -28,8 +28,13 @@ export class DinamicosComponent {
   }
 
   @ViewChild('miFormulario') miFormulario!: NgForm;
+
   guardar() {
     console.log('formulario posteado');
+  }
+
+  eliminar( index: number ) {
+    this.persona.favoritos.splice(index, 1);
   }
 
 }
