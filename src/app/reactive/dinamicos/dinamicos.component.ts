@@ -22,7 +22,7 @@ export class DinamicosComponent {
   get favoritosArr() {
     return this.miFormulario.get('favoritos') as FormArray;
   }
-
+ 
   constructor( private fb: FormBuilder) { }
 
   campoEsValido(campo: string) {
@@ -37,6 +37,10 @@ export class DinamicosComponent {
     this.favoritosArr.push( this.fb.control( this.nuevoFavorito.value, Validators.required ));
 
     this.nuevoFavorito.reset();
+  }
+
+  borrar(i: number) {
+    this.favoritosArr.removeAt(i);
   }
 
   guardar() {
